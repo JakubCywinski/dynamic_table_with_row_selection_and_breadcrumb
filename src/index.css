@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #397524 #dfe9eb;
+        }
+
+        *::-webkit-scrollbar {
+            width: 10px;
+        }
+        *::-webkit-scrollbar-track {
+            @apply bg-slate-400;
+        }
+
+        *::-webkit-scrollbar-track:hover {
+            @apply bg-slate-400;
+        }
+
+        *::-webkit-scrollbar-track:active {
+            @apply bg-slate-400;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            @apply bg-emerald-700;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            @apply bg-emerald-800;
+        }
+
+        *::-webkit-scrollbar-thumb:active {
+            @apply bg-emerald-900;
+        }
+    }
+
+    body {
+        @apply bg-slate-100;
+        @apply text-zinc-950;
+    }
+}
+
+@layer preloader {
+    .pre-squares {
+        width: 40px;
+        line-height: 19px;
+        height: 35px;
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+
+        .pre-square {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background: #666;
+            opacity: 0.2;
+            animation: movein 2s infinite;
+        }
+
+        .pre-square:nth-child(1) {
+            transform: translate(0, -25px);
+        }
+
+        .pre-square:nth-child(2) {
+            transform: translate(25px, 0);
+        }
+
+        .pre-square:nth-child(3) {
+            transform: translate(-25px, 0);
+        }
+
+        .pre-square:nth-child(4) {
+            transform: translate(0, 25px);
+        }
+    }
+    .pre-square {
+        opacity: 0.5;
+    }
+
+    @keyframes movein {
+        33% {
+            transform: translate(0, 0);
+            opacity: 0.7;
+        }
+        66% {
+            transform: translate(0, 0);
+            opacity: 0.7;
+        }
+    }
+}
+
+@layer table {
+    .table-head {
+        tr {
+            th {
+                @apply text-left p-4;
+            }
+        }
+    }
+
+    .table-body {
+        tr {
+            td {
+                @apply py-2 px-4;
+            }
+        }
+    }
+
+    .main-table {
+        tbody:nth-child(2n + 1) tr:first-child {
+            @apply bg-slate-100/10;
+        }
+        tbody:nth-child(2n + 0) tr:first-child {
+            @apply bg-slate-100/20;
+        }
+    }
+}

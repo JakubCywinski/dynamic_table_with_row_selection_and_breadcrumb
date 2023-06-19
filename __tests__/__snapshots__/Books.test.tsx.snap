@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Books > renders loading state 1`] = `
+<div>
+  Category not found
+</div>
+`;
+
+exports[`Books > renders match snapshot 1`] = `
+<div>
+  Category not found
+</div>
+`;
